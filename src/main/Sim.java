@@ -28,13 +28,13 @@ public class Sim {
     public static Queue Customers;
     public static Random stream;
 
-    public static void main(String argv[]) {
+    public static void main(String args[]) {
 
         MeanInterArrivalTime = 4.5;
         MeanServiceTime = 3.2;
         SIGMA = 0.6;
         TotalCustomers = 1000;
-        long seed = Long.parseLong(argv[0]);
+        long seed = Long.parseLong(args[0]);
         stream = new Random(seed); // initialize rng stream
         FutureEventList = new EventList();
         Customers = new Queue();
