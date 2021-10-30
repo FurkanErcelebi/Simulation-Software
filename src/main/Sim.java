@@ -33,13 +33,8 @@ public class Sim {
         MeanInterArrivalTime = 4.5;
         MeanServiceTime = 3.2;
         SIGMA = 0.6;
-<<<<<<< HEAD
-        TotalCustomers = 50;
-        long seed = Long.parseLong(args[0]);
-=======
         TotalCustomers = 1000;
         long seed = Long.parseLong(argv[0]);
->>>>>>> parent of f7891b3... New changes committed
         stream = new Random(seed); // initialize rng stream
         FutureEventList = new EventList();
         Customers = new Queue();
