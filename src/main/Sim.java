@@ -33,7 +33,7 @@ public class Sim {
         MeanInterArrivalTime = 4.5;
         MeanServiceTime = 3.2;
         SIGMA = 0.6;
-        TotalCustomers = 1000;
+        TotalCustomers = 50;
         long seed = Long.parseLong(args[0]);
         stream = new Random(seed); // initialize rng stream
         FutureEventList = new EventList();
@@ -53,6 +53,10 @@ public class Sim {
                 ProcessArrival(evt);
             else
                 ProcessDeparture(evt);
+
+            Customers.travel();
+            FutureEventList.travel();
+
         }
 
         ReportGeneration();
@@ -78,7 +82,7 @@ public class Sim {
         LongService = 0;
 
         // create first arrival event
-        Event evt = new Event(arrival, exponential( stream, MeanInterArrivalTime));
+        Event evt = new Event( arrival, exponential( stream, MeanInterArrivalTime) );
 
         FutureEventList.enqueue( evt );
     }

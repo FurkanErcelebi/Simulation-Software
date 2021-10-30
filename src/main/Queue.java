@@ -55,6 +55,7 @@ public class Queue {
 
         Node curr = front;
 
+        System.out.printf("Waitig Queue:");
         while (curr != null){
             System.out.printf("("+ curr.getData().get_type() +":" + curr.getData().get_time() + ")->");
             curr = curr.getNext();
